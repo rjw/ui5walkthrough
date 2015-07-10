@@ -23,6 +23,12 @@ sap.ui.define([
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
 
+      // Set our local Invoice model
+      var oConfig = this.getMetadata().getConfig();
+      var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
+      var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
+      this.setModel(oInvoiceModel, "invoice");
+
       // Set the dialog fragment
       this.helloDialog = new helloDialog();
     }

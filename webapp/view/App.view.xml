@@ -7,26 +7,14 @@
   <App class="sapUiDemoWT">
     <pages>
       <Page title="{i18n>homePageTitle}">
+        <headerContent>
+          <Button
+            icon="sap-icon://hello-world"
+            press="onOpenDialog"/>
+        </headerContent>
         <content>
-          <Panel
-            headerText="{i18n>helloPanelTitle}"
-            class="sapUiResponsiveMargin"
-            width="auto">
-
-            <content>
-              <Button
-                text="{i18n>showHelloButtonText}"
-                press="onShowHello"
-                class="myCustomButton"/>
-
-              <Input
-                value="{/recipient/name}"
-                valueLiveUpdate="true"
-                width="60%"/>
-                <Text text="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-            </content>
-
-          </Panel>
+          <mvc:XMLView viewName="sap.ui.demo.wt.view.HelloPanel"/>
+          <mvc:XMLView viewName="sap.ui.demo.wt.view.InvoiceList"/>
         </content>
       </Page>
     </pages>

@@ -3,6 +3,7 @@ sap.ui.define([
   "sap/m/MessageToast"
 ], function(Controller, MessageToast) {
   "use strict";
+  
   return Controller.extend("sap.ui.demo.wt.controller.HelloPanel", {
     onShowHello : function() {
       var oBundle = this.getView().getModel("i18n").getResourceBundle();

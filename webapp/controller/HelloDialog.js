@@ -4,9 +4,10 @@ sap.ui.define([
   "use strict";
 
   return Object.extend("sap.ui.demo.wt.controller.HelloDialog", {
+
     _getDialog : function() {
       if (!this._oDialog) {
-        this._odialog = sap.ui.xmlfragment("sap.ui.demo.wt.view.HelloDialog", this);
+        this._oDialog = sap.ui.xmlfragment("sap.ui.demo.wt.view.HelloDialog", this);
       }
       return this._oDialog;
     },

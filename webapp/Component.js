@@ -7,20 +7,19 @@ sap.ui.define([
 
   return UIComponent.extend("sap.ui.demo.wt.Component", {
     metadata : {
-      manifest : "json"
+      manifest: "json"
     },
 
     init : function() {
-      // call init of parent
+      // call init function of the parent
       UIComponent.prototype.init.apply(this, arguments);
 
-      // Set the data model
+      // set data model
       var oData = {
         recipient : {
           name : "World"
         }
       };
-
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
 
@@ -34,5 +33,5 @@ sap.ui.define([
       // Set the dialog fragment
       this.helloDialog = new HelloDialog();
     }
-  })
-})
+  });
+});

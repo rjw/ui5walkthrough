@@ -1,5 +1,13 @@
 <mvc:View controllerName="sap.ui.demo.wt.controller.InvoiceList" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-  <List class="sapUiResponsiveMargin" headerText="{i18n>invoiceListTitle}" items="{invoice>/Invoices}" width="auto">
+<List class="sapUiResponsiveMargin" id="invoiceList" items="{ path: 'invoice>/Invoices', sorter: {path : 'ShipperName', group: true} }" width="auto">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{i18n>invoiceListTitle}"/>
+        <ToolbarSpacer/>
+        <SearchField search="onFilterInvoice" width="50%" />
+      </Toolbar>
+    </headerToolbar>
+
     <items>
       <ObjectListItem
         title="{invoice>Quantity} x {invoice>ProductName}"

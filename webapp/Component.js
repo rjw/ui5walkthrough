@@ -1,8 +1,9 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
   "sap/ui/model/json/JSONModel",
+  "sap/ui/model/resource/ResourceModel",
   "sap/ui/demo/wt/controller/HelloDialog"
-], function (UIComponent, JSONModel, HelloDialog) {
+], function (UIComponent, JSONModel, ResourceModel, HelloDialog) {
   "use strict";
 
   return UIComponent.extend("sap.ui.demo.wt.Component", {
@@ -29,6 +30,10 @@ sap.ui.define([
 
       var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
       this.setModel(oInvoiceModel, "invoice");
+
+      // Set the i18n model - This is not in Walkthrough
+      var i18nModel = new ResourceModel({bundleUrl: jQuery.sap.getModulePath(sNamespace, oConfig.resourceBundle)});
+      this.setModel(i18nModel, "i18n");
 
       // Set the dialog fragment
       this.helloDialog = new HelloDialog();

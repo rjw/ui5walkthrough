@@ -34,7 +34,8 @@
     }
   },
   "config": {
-    "invoiceLocal": "/Invoices.json"
+    "invoiceLocal": "/Invoices.json",
+    "resourceBundle": "/i18n/i18n.properties"
   },
   "models": {
     "i18n": {
